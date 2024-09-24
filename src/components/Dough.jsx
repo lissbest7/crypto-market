@@ -46,7 +46,7 @@ function DoughnutChart() {
 
   return (
     <div style={{ width: "300px", margin: "0 auto" }}>
-
+      <Doughnut data={data} options={options} />
     </div>
   );
 }
