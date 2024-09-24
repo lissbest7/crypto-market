@@ -1,4 +1,4 @@
-/* eslint-disable no-script-url */
+// ConverterCard.jsx
 import React from "react";
 import DropBtn from "./DropBtn.jsx";
 import CustomDropdown from "./CustomDropdown";
@@ -8,28 +8,32 @@ import CustomBtn from "./CustomBtn";
 
 function ConverterCard() {
   const Currency = [
-    { value: "USD", label: "USDT"},
-    { value: "BTD", label: "BDT"},
-    { value: "FTCE", label: "FTCE"},
-    { value: "BTC", label: "BTC"}
+    { value: "USD", label: "USDT" },
+    { value: "BTD", label: "BDT" },
+    { value: "FTCE", label: "FTCE" },
+    { value: "BTC", label: "BTC" }
   ];
+  
   const Currency_From = [
-    { value: "BTC", label: "BTC"},
-    { value: "IN", label: "IN"},
-    { value: "FTCE", label: "FTCE"},
-    { value: "USD", label: "USD"}
+    { value: "BTC", label: "BTC" },
+    { value: "IN", label: "IN" },
+    { value: "FTCE", label: "FTCE" },
+    { value: "USD", label: "USD" }
   ];
+  
   const buttonContent = (
     <div>
       <DropBtn />
     </div>
   );
+  
   const menuItems = [
     { label: "USD", image: adminIcon },
-    { label: "BTC",  image: adminIcon },
+    { label: "BTC", image: adminIcon },
     { label: "FTCE", image: adminIcon },
-    { label: "IN",  image: adminIcon },
+    { label: "IN", image: adminIcon }
   ];
+  
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -57,7 +61,7 @@ function ConverterCard() {
             <input
               type="text"
               placeholder="0.044"
-              className="w-full sm:w-[308px] text-[15px] font-normal leading-[10px] py-[15px] pl-[17px] pr-[6.5rem] rounded-[7px] text-[##626D7D] dark:text-white outline-none bg-gray-50 dark:bg-[#1C1C25] focus:bg-white focus:border-[#2F80ED]"
+              className="w-full sm:w-[308px] text-[15px] font-normal leading-[10px] py-[15px] pl-[17px] pr-[6.5rem] rounded-[7px] text-[#626D7D] dark:text-white outline-none bg-gray-50 dark:bg-[#1C1C25] focus:bg-white focus:border-[#2F80ED]"
             />
             <div className="absolute right-[7px] top-[6px] bg-[#FCF4DB] rounded-[7px] px-2 w-[86px]">
               <SelectField data={Currency_From} textColor="text-[#FF7C04]" />
@@ -66,13 +70,13 @@ function ConverterCard() {
 
           <div>
             <div className="text-center mt-[14px]">
-                <CustomBtn onClick={() => {}} 
-                  bgColor="#4D91FF" textColor="#FFF" label="Convert Now" Width='100%' />
-              </div>
-              <p className="text-[#626D7D] dark:text-[#626D7D] text-[11px] font-normal leading-[11px] mt-[12px] sm:w-[290px] word-break">
-                  The ultimate price and output is determined by the amount of tokens in the pool at the time of your swap.
-              </p>
+              <CustomBtn onClick={() => {}} 
+                bgColor="#4D91FF" textColor="#FFF" label="Convert Now" Width='100%' />
             </div>
+            <p className="text-[#626D7D] dark:text-[#626D7D] text-[11px] font-normal leading-[11px] mt-[12px] sm:w-[290px] word-break">
+              The ultimate price and output is determined by the amount of tokens in the pool at the time of your swap.
+            </p>
+          </div>
         </form>
       </div>
     </div>

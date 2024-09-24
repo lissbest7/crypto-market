@@ -1,54 +1,63 @@
-import { Doughnut } from "react-chartjs-2";
-import { useEffect } from "react";
-import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
+import React, { PureComponent } from 'react';
+import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
 
-// Register necessary components
-Chart.register(ArcElement, Tooltip, Legend);
+const data = [
+  { name: 'Bitcoin (BTC)', value: 500 },
+  { name: 'Ethereum (ETH)', value: 300 },
+  { name: 'Ripple (XRP)', value: 200 },
+  { name: 'Litecoin (LTC)', value: 100 },
+];
 
-function DoughnutChart() {
-  const data = {
-    labels: ["BTC", "ETH", "ADA", "Others"],
-    datasets: [
-      {
-        label: "Attendance for Week 1",
-        data: [25, 24, 25, 25],
-        backgroundColor: [
-          "#4D91FF",
-          "#002D67",
-          "#00DCF8",
-          "rgba(153,102,255,1)",
-        ],
-      },
-    ],
-  };
+const COLORS = ['#FFD700', '#3C3C3D', '#4B4F54', '#A3A3A3'];
 
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        align: "center",
-        position: "bottom",
-      },
-      title: {
-        display: true,
-        text: "Doughnut Chart",
-        color: "blue",
-        font: {
-          size: 34,
-        },
-        padding: {
-          top: 30,
-          bottom: 30,
-        },
-      },
-    },
-  };
+const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.55; 
+  const x = cx + radius * Math.cos(-midAngle * (Math.PI / 180));
+  const y = cy + radius * Math.sin(-midAngle * (Math.PI / 180));
 
   return (
-    <div style={{ width: "300px", margin: "0 auto" }}>
-      <Doughnut data={data} options={options} />
-    </div>
+    <text x={x} y={y} fill="white" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central">
+      {(percent * 100).toFixed(0)}%
+    </text>
   );
-}
+};
 
-export default DoughnutChart;
+const Legend = () => (
+  <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '20px' }}>
+    {data.map((entry, index) => (
+      <div key={entry.name} style={{ display: 'flex', alignItems: 'center', marginBottom: '30px' }}>
+        <div style={{ width: '20px', height: '20px', backgroundColor: COLORS[index], marginRight: '5px' }} />
+        <span>{entry.name}</span>
+      </div>
+    ))}
+  </div>
+);
+
+export default class CryptoPieChart extends PureComponent {
+  render() {
+    return (
+      <div>
+        <div style={{ display: 'flex', alignItems: 'flex-start', marginTop: '20px' }}>
+          <ResponsiveContainer width="65%" height={250}>
+            <PieChart>
+              <Pie
+                data={data}
+                cx="50%"
+                cy="50%"
+                labelLine={false}
+                label={renderCustomizedLabel}
+                outerRadius={110}
+                dataKey="value"
+              >
+                {data.map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                ))}
+              </Pie>
+            </PieChart>
+          </ResponsiveContainer>
+          <Legend /> 
+        </div>
+      </div>
+    );
+  }
+}
