@@ -101,7 +101,6 @@ function Settings() {
           )}
         </div>
 
-        {/* Diğer bölümler... */}
       </div>
 
       {formContent && (
