@@ -35,7 +35,7 @@ export default function ChartBar() {
         responsive: true,
         scales: {
           x: {
-            type: 'category', 
+            type: 'category',
             display: true,
           },
           y: {
