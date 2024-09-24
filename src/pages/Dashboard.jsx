@@ -1,4 +1,4 @@
-// src/pages/Dashboard.jsx
+
 import React from 'react';
 import Table from '../components/Table';
 import { rateHistoryData, cardData, BalanceData } from '../data/currencyData';
@@ -8,7 +8,7 @@ import CurrencyCard from '../components/CurrencyCard';
 import BalanceCard from '../components/BalanceCard';
 import DonutChart from '../components/Dough';
 import ConverterCard from '../components/ConverterCard';
-import ChartBar from '../components/ChartBar'; // Correct import
+import ChartBar from '../components/ChartBar';
 import adminIcon from "../assets/svg/adminIcon.svg";
 import DropBtn from '../components/DropBtn';
 import CustomDropdown from '../components/CustomDropdown';
