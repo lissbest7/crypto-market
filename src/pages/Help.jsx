@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Help() {
   const faqs = [
@@ -41,11 +42,11 @@ function Help() {
       <div className="mt-6">
         <h3 className="text-lg font-semibold mb-2">Additional Resources</h3>
         <ul className="list-disc ml-5">
-          <li><a href="/support" className="text-blue-500">Support Center</a></li>
-          <li><a href="/tutorials" className="text-blue-500">Tutorials</a></li>
-          <li><a href="/contact" className="text-blue-500">Contact Us</a></li>
-          <li><a href="/terms" className="text-blue-500">Terms of Service</a></li>
-          <li><a href="/privacy" className="text-blue-500">Privacy Policy</a></li>
+          <li><Link to="/support" className="text-blue-500">Support Center</Link></li>
+          <li><Link to="/tutorials" className="text-blue-500">Tutorials</Link></li>
+          <li><Link to="/contact" className="text-blue-500">Contact Us</Link></li>
+          <li><Link to="/terms" className="text-blue-500">Terms of Service</Link></li>
+          <li><Link to="/privacy" className="text-blue-500">Privacy Policy</Link></li>
         </ul>
       </div>
     </div>
