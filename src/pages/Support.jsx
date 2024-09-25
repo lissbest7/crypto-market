@@ -9,7 +9,7 @@ function Support() {
   const faqs = [
     {
       question: "How can I reset my password?",
-      answer: "To reset your password, go to the login page and click on 'Forgot Password'. Follow the instructions in the email you receive to reset your password."
+      answer: "To reset your password, go to the login page and click on 'Forgot Password'. Follow the instructions in the email you receive."
     },
     {
       question: "How do I contact support?",
@@ -44,7 +44,6 @@ function Support() {
       setError("Please fill in all fields.");
       return;
     }
-    // Form submission logic here (e.g., API call)
     setSubmitted(true);
     setError('');
     setFormData({ name: '', email: '', message: '' });

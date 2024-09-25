@@ -30,7 +30,7 @@ export default function CustomDropdown({ buttonContent, menuItems }) {
                             <Menu.Item key={item.label}>
                                 {({ active }) => (
                                     <Link
-                                        to={item.href} // Link bileşenini kullanıyoruz
+                                        to={item.href} 
                                         className={classNames(
                                             active ? 'bg-gray-100 text-gray-900' : 'text-gray-700 dark:text-white',
                                             'block px-4 py-2 text-sm'
