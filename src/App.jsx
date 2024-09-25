@@ -6,7 +6,7 @@ import Markets from "./pages/Markets";
 import Transactions from "./pages/Transactions";
 import Profile from "./pages/Profile";
 import Setting from "./pages/Setting";
-import Help from "./pages/Help";
+import Help from "./pages/Help.jsx";
 import Tutorials from "./pages/Tutorials.jsx";
 import Terms from "./pages/Terms.jsx";
 import Privacy from "./pages/Privacy.jsx";
