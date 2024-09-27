@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { Menu, Transition } from '@headlessui/react';
-import { Link } from 'react-router-dom'; // Link'i ekleyin
+import { Link } from 'react-router-dom'; 
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ');
