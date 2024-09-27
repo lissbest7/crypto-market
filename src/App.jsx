@@ -13,6 +13,7 @@ import Privacy from "./pages/Privacy.jsx";
 import Contact from "./pages/Contact.jsx";
 import Support from "./pages/Support.jsx";
 import Auth from "./pages/Auth.jsx";
+import AllCoins from "./pages/AllCoins.jsx";
 
 function App() {
   const location = useLocation();
@@ -35,6 +36,7 @@ function App() {
             <Route path="/terms" element={<Terms />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/support" element={<Support />} />
+            <Route path="/all-coins" element={<AllCoins />} />
           </Routes>
         </div>
       )}
